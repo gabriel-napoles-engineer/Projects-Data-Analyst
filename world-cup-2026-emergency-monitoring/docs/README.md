@@ -1,12 +1,11 @@
-# Documentación técnica
+# Technical Documentation
 
-Esta carpeta contiene la documentación técnica del sistema, organizada por componente.
+This folder contains the system's technical documentation, organized by component.
 
-## Contenido
+## Contents
 
-* `architecture/` — Descripción de la Arquitectura general y flujo de datos.
-* `quickcapture/` — Descripción de la Documentación de captura de incidentes e inspecciones.
-* `automation/` — Descripción de los Flujos de automatización, integración y traducción.
-* `dashboards/` — Descripción de mapas y dashboards.
-* `security/` — Descripción de Privacidad, protección de datos.
-
+* `architecture/` — Overview of the system architecture and data flow.
+* `quickcapture/` — Documentation for incident and inspection data collection.
+* `automation/` — Automation, integration, and translation workflows.
+* `dashboards/` — Documentation for maps and dashboards.
+* `security/` — Data privacy and protection documentation.
