@@ -1,0 +1,104 @@
+[
+    {
+        "eventType": "addData",
+        "feature": {
+            "attributes": {
+                "GlobalID": "{50281F1A-139A-47C8-83D2-31F69B2XXX}",
+                "esrisnsr_azimuth": 53.9417,
+                "esrignss_positionsourcetype": 2,
+                "esrignss_receiver": "AppStudio-AndroidLocation",
+                "esrignss_h_rms": 12.73395252227XXXX,
+                "esrignss_v_rms": 6.01783466339XXXX,
+                "esrignss_latitude": 20.5650XXXX,
+                "esrignss_longitude": -100.3785XXXX,
+                "esrignss_altitude": 1881.128417XXXX,
+                "esrignss_numsats": 9,
+                "esrignss_fixdatetime": 178985460XXXX,
+                "Nombre": "XXXX",
+                "Corporacion": "XXXX",
+                "Fecha": XXXX,
+                "inspeccion_riesgos": "atencion_medica",
+                "Sede": "CDMX",
+                "Nombre_edad_paciente": "XXXX",
+                "Resumen_atencion": "XXXX",
+                "grupo_paciente": "XXXX",
+                "Sub_Sede": "XXXX",
+                "nacionalidad": "XXXX",
+                "categoria_urgencia": "Trauma",
+                "ubicacion_atencion": "Cancha",
+                "edad_paciente": "XXXX",
+                "signos_vitales": "XXXX"
+            },
+            "geometry": {
+                "x": -100.378XXXX,
+                "y": 20.5650XXXX,
+                "spatialReference": {
+                    "wkid": 4326
+                },
+                "z": 1881.1284179XXXX,
+                "hasZ": true
+            },
+            "result": {
+                "globalId": "{50281F1A-139A-47C8-83D2-31F69B2AXXXX}",
+                "objectId": 3355,
+                "success": true,
+                "uniqueId": 3355
+            },
+            "layerInfo": {
+                "id": 0,
+                "name": "Marcajes"
+            }
+        },
+        "attachmentInfo": {
+            "photo": [
+                {
+                    "id": 3300,
+                    "globalId": "{40FA4BBC-3381-4EA5-9D3A-B67094F6XXXX}",
+                    "name": "XXXX.jpg",
+                    "contentType": "image/jpeg",
+                    "keywords": "photo",
+                    "exifInfo": null,
+                    "url": "https://services1.arcgis.com/XXXX/arcgis/rest/services/XXXX/FeatureServer/0/XXX/attachments/XXXX?token=XXXX",
+                    "parentObjectId": XXXX
+                }
+            ]
+        },
+        "response": {
+            "addResults": [
+                {
+                    "globalId": "{50281F1A-139A-47C8-83D2-31F69B2AXXX}",
+                    "objectId": XXXX,
+                    "success": true,
+                    "uniqueId": XXXX
+                }
+            ],
+            "attachments": {
+                "addResults": [
+                    {
+                        "globalId": "{40FA4BBC-3381-4EA5-9D3A-B67094F6XXXX}",
+                        "objectId": XXXX,
+                        "success": true
+                    }
+                ]
+            },
+            "id": 3355
+        },
+        "portalInfo": {
+            "url": "https://www.arcgis.com",
+            "token": ""
+        },
+        "userInfo": {
+            "username": "",
+            "firstName": "",
+            "lastName": "",
+            "fullName": "",
+            "email": ""
+        },
+        "projectInfo": {
+            "projectItemId": "162d5382df074bd5beacba0b43bXXXXX",
+            "projectTitle": "FWC CDMX - EMERGENCY",
+            "serviceItemId": "2926c73a352240adb46fc9ed101XXXX",
+            "serviceUrl": "https://services1.arcgis.com/XXXX/arcgis/rest/services/XXXX/FeatureServer"
+        }
+    }
+]

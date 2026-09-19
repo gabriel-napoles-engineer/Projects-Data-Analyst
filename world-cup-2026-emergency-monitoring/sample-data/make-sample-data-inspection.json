@@ -1,0 +1,96 @@
+[
+    {
+        "eventType": "addData",
+        "feature": {
+            "attributes": {
+                "GlobalID": "{09584479-1DBB-4344-AC3A-D21204DXXXX}",
+                "esrisnsr_azimuth": 105.1361,
+                "esrignss_positionsourcetype": 2,
+                "esrignss_receiver": "AppStudio-AndroidLocation",
+                "esrignss_h_rms": 11.9608507156XXXX,
+                "esrignss_v_rms": 8.88735961914XXXX,
+                "esrignss_latitude": 20.5650XXXX,
+                "esrignss_longitude": -100.3785XXXX,
+                "esrignss_altitude": 1881.17773XXXX,
+                "esrignss_numsats": 11,
+                "esrignss_fixdatetime": 178985467XXXX,
+                "Nombre": "XXXX",
+                "Corporacion": "FIFA",
+                "Fecha": XXXX,
+                "inspeccion_riesgos": "punto_reunion",
+                "Sede": "XXXX",
+                "Comentarios": "XXXX"
+            },
+            "geometry": {
+                "x": -100.378XXXXX,
+                "y": 20.5650XXXX,
+                "spatialReference": {
+                    "wkid": 4326
+                },
+                "z": 1881.1777XXX,
+                "hasZ": true
+            },
+            "result": {
+                "globalId": "{09584479-1DBB-4344-AC3A-D2120XXXX}",
+                "objectId": XXXX,
+                "success": true,
+                "uniqueId": XXXX
+            },
+            "layerInfo": {
+                "id": 0,
+                "name": "Marcajes"
+            }
+        },
+        "attachmentInfo": {
+            "photo": [
+                {
+                    "id": XXXX,
+                    "globalId": "{D1DBFC1B-3DDA-4402-B1C1-DDC0BBXXXXX}",
+                    "name": "XXXX.jpg",
+                    "contentType": "image/jpeg",
+                    "keywords": "photo",
+                    "exifInfo": null,
+                    "url": "https://services1.arcgis.com/XXXX/arcgis/rest/services/XXXX/FeatureServer/0/XXXX/attachments/XXXX?token=XXXX",
+                    "parentObjectId": XXXX
+                }
+            ]
+        },
+        "response": {
+            "addResults": [
+                {
+                    "globalId": "{09584479-1DBB-4344-AC3A-D212XXXXX}",
+                    "objectId": XXXX,
+                    "success": true,
+                    "uniqueId": XXXX
+                }
+            ],
+            "attachments": {
+                "addResults": [
+                    {
+                        "globalId": "{D1DBFC1B-3DDA-4402-B1C1-DDC0XXXXX}",
+                        "objectId": XXXX,
+                        "success": true
+                    }
+                ]
+            },
+            "id": XXXX
+        },
+        "portalInfo": {
+            "url": "https://www.arcgis.com",
+            "token": ""
+        },
+        "userInfo": {
+            "username": "",
+            "firstName": "",
+            "lastName": "",
+            "fullName": "",
+            "email": ""
+        },
+        "projectInfo": {
+            "projectItemId": "e67ff64216674656a46bd5327XXXXX",
+            "projectTitle": "FWC CDMX - VMM",
+            "serviceItemId": "2926c73a352240adb46fc9ed1XXXXX",
+            "serviceUrl": "https://services1.arcgis.com/XXXX/arcgis/rest/services/XXXX/FeatureServer"
+        }
+    }
+]
