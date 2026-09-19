@@ -1,11 +1,11 @@
-# Flujo de datos
+# Data Flow
 
-El sistema procesa cada registro desde su captura en campo hasta su visualización y notificación.
+The system processes each record from field capture through visualization and notification.
 
-## Flujo principal
+## Main Flow
 
 ```text
-Personal operativo
+Operational Personnel
         │
         ▼
 ArcGIS QuickCapture
@@ -25,7 +25,7 @@ Feature Layer ES
         ├──► Gemini
         │       │
         │       ▼
-        │   Traducción EN
+        │  EN Translation
         │       │
         │       ▼
         │  ArcGIS REST API
@@ -42,30 +42,29 @@ Feature Layer ES
         └──► WhatsApp
 ```
 
-## Secuencia
+## Sequence
 
-1. El personal registra un incidente o inspección mediante QuickCapture.
-2. La información se almacena en la Feature Layer en español.
-3. El registro activa un webhook.
-4. Make recibe y procesa la información.
-5. Los datos se registran en Google Sheets.
-6. Los campos necesarios se traducen al inglés mediante Gemini.
-7. Make envía el registro traducido a ArcGIS mediante REST API.
-8. La información se almacena en la Feature Layer en inglés.
-9. Ambas capas alimentan sus respectivos Web Maps y Dashboards.
-10. Make envía las notificaciones configuradas mediante WhatsApp.
+1. Operational personnel record an incident or inspection using QuickCapture.
+2. The information is stored in the Spanish Feature Layer.
+3. The record triggers a webhook.
+4. Make receives and processes the information.
+5. The data is recorded in Google Sheets.
+6. The required fields are translated into English using Gemini.
+7. Make sends the translated record to ArcGIS through the REST API.
+8. The information is stored in the English Feature Layer.
+9. Both layers feed their respective Web Maps and Dashboards.
+10. Make sends the configured notifications through WhatsApp.
 
-## Distribución por sede
+## Distribution by Host City
 
-El mismo flujo se utilizó para las tres sedes:
+The same workflow was used for all three host cities:
 
-* Ciudad de México.
+* Mexico City.
 * Guadalajara.
 * Monterrey.
 
-Cada sede utilizó un QuickCapture de incidentes y uno de inspecciones, cada uno con su propio webhook y escenario de Make.
+Each host city used one QuickCapture application for incidents and one for inspections, each with its own webhook and Make scenario.
 
-Nota
+## Note
 
-Este documento representa el flujo general del sistema. No se incluyen endpoints, tokens, webhooks, credenciales ni datos reales de producción.
-
+This document represents the general system workflow. Production endpoints, tokens, webhooks, credentials, and real production data are not included.
