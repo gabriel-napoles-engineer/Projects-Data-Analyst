@@ -1,10 +1,10 @@
 # Dashboards
 
-Se desarrollaron dos **ArcGIS Dashboards**, uno en español y otro en inglés.
+Several **ArcGIS Dashboards** were developed, in Spanish and in English.
 
-Cada dashboard estaba conectado a su respectivo Web Map y Feature Layer.
+Each dashboard was connected to its corresponding Web Map and Feature Layer.
 
-## Estructura
+## Structure
 
 ```text
 Feature Layer ES
@@ -24,30 +24,29 @@ Feature Layer EN
   Dashboard EN
 ```
 
-## Información visualizada
+## Displayed Information
 
-Los dashboards permitían consultar prácticamente en tiempo real:
+The dashboards provided near real-time access to:
 
-* Ubicación de los registros.
-* Tipo de incidente.
-* Personal que realizó la atención.
-* Prioridad.
-* Total de atenciones.
-* Distribución de eventos por sede.
-* Información operativa adicional.
+* Record locations.
+* Incident type.
+* Personnel who provided the response.
+* Priority level.
+* Total number of responses.
+* Distribution of events by host city.
+* Additional operational information.
 
-## Objetivo
+## Objective
 
-Centralizar la información generada en campo y facilitar su monitoreo desde el puesto de mando mediante mapas, indicadores y filtros interactivos.
+Centralize the information generated in the field and facilitate monitoring from the command center through maps, indicators, and interactive filters.
 
-## Evidencias
+## Evidence
 
-Las capturas sanitizadas se encuentran en:
+Sanitized screenshots are available at:
 
 ```text
 /screenshots/dashboards/
 /screenshots/maps/
 ```
 
-Las evidencias no contienen información médica
-
+The evidence does not contain medical information.
