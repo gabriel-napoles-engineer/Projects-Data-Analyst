@@ -1,36 +1,36 @@
-# QuickCapture de incidentes
+# Incident QuickCapture
 
-Se implementaron tres aplicaciones de **ArcGIS QuickCapture**, una para cada sede:
+Three **ArcGIS QuickCapture** applications were implemented, one for each host city:
 
-* Ciudad de México
+* Mexico City
 * Guadalajara
 * Monterrey
 
-Su objetivo fue permitir al personal operativo registrar de forma rápida las atenciones médicas e incidentes de emergencia ocurridos durante la operación.
+Their purpose was to allow operational personnel to quickly record medical assistance cases and emergency incidents that occurred during operations.
 
-## Información registrada
+## Recorded Information
 
-Cada marcaje podía incluir:
+Each record could include:
 
-* Personal responsable
-* Corporación
-* Fecha y hora
-* Ubicación geográfica
-* Altitud
-* Tipo de incidente
-* Sede
-* Comentarios o información adicional
+* Responsible personnel
+* Organization
+* Date and time
+* Geographic location
+* Altitude
+* Incident type
+* Host city
+* Comments or additional information
 
-## Flujo
+## Workflow
 
 ```text
-Personal operativo
+Operational Personnel
         │
         ▼
 ArcGIS QuickCapture
         │
         ▼
-Registro del incidente
+Incident Record
         │
         ▼
 Feature Layer ES
@@ -42,15 +42,14 @@ Webhook
 Make
 ```
 
-Cada QuickCapture estaba asociado a su propio webhook y escenario de automatización.
+Each QuickCapture application was associated with its own webhook and automation scenario.
 
-## Evidencias
+## Evidence
 
-Las capturas sanitizadas de las aplicaciones se encuentran en:
+Sanitized screenshots of the applications are available at:
 
 ```text
 /screenshots/quickcapture/
 ```
 
-Las evidencias publicadas no contienen datos personales, coordenadas reales ni información médica identificable.
-
+The published evidence does not contain personal data, real coordinates, or identifiable medical information.
