@@ -1,45 +1,44 @@
-# Privacidad y protección de datos
+# Data Privacy and Protection
 
-Este repositorio documenta únicamente la arquitectura y funcionamiento general del sistema.
+This repository documents only the architecture and general operation of the system.
 
-No contiene información real utilizada durante la operación.
+It does not contain real information used during operations.
 
-## Información excluida
+## Excluded Information
 
-No se publican:
+The following information is not published:
 
-* Datos personales.
-* Información médica identificable.
-* Nombres reales de operadores.
-* Coordenadas reales de incidentes.
-* Números telefónicos.
-* Fotografías sensibles.
+* Personal data.
+* Identifiable medical information.
+* Real operator names.
+* Real incident coordinates.
+* Phone numbers.
+* Sensitive photographs.
 * Webhooks.
 * Tokens.
 * API keys.
-* Credenciales.
-* URLs privadas.
-* Endpoints de producción.
-* IDs internos de servicios.
-* Bases de datos originales.
+* Credentials.
+* Private URLs.
+* Production endpoints.
+* Internal service IDs.
+* Original databases.
 
-## Evidencias
+## Evidence
 
-Las capturas incluidas en el repositorio fueron revisadas y sanitizadas antes de su publicación.
+The screenshots included in the repository were reviewed and sanitized before publication.
 
-Cuando es necesario mostrar ejemplos de registros, se utilizan datos ficticios o anonimizados.
+When record examples are required, fictional or anonymized data is used.
 
-## Datos de ejemplo
+## Sample Data
 
-Los archivos contenidos en:
+The files contained in:
 
 ```text
 /sample-data/
 ```
 
-tienen únicamente fines demostrativos y no corresponden a registros reales.
+are provided for demonstration purposes only and do not correspond to real records.
 
-## Objetivo
+## Objective
 
-La documentación busca mostrar la arquitectura, integraciones y metodología utilizadas sin exponer información sensible ni comprometer la infraestructura original del pr
-
+The documentation is intended to demonstrate the architecture, integrations, and methodology used without exposing sensitive information or compromising the original project infrastructure.
