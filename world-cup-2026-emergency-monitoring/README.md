@@ -1,22 +1,22 @@
 # World Cup 2026 Emergency Monitoring
 
-Sistema geoespacial para el registro, procesamiento, visualización y notificación de atenciones médicas, incidentes de emergencia e inspecciones operativas durante el Mundial de la FIFA 2026 en México.
+Geospatial system for the registration, processing, visualization, and notification of medical assistance cases, emergency incidents, and operational inspections during the FIFA World Cup 2026 in Mexico.
 
-La solución fue implementada para las sedes de:
+The solution was implemented for the following host cities:
 
-* Ciudad de México
+* Mexico City
 * Guadalajara
 * Monterrey
 
-## Objetivo
+## Objective
 
-Permitir al personal operativo registrar incidentes desde dispositivos móviles y concentrar la información prácticamente en tiempo real para su visualización y seguimiento.
+Enable operational personnel to report incidents from mobile devices and centralize the information in near real time for visualization and monitoring.
 
-El sistema también generaba una versión de la información en inglés y enviaba notificaciones automáticas al personal autorizado.
+The system also generated an English version of the information and sent automated notifications to authorized personnel.
 
-## Arquitectura general
+## General Architecture
 
-El flujo principal del sistema fue:
+The main system workflow was:
 
 ```text
 ArcGIS QuickCapture
@@ -33,7 +33,7 @@ Feature Layer ES
        Make
         │
         ├──► Google Sheets
-        ├──► Gemini ──► Traducción al inglés
+        ├──► Gemini ──► English Translation
         ├──► ArcGIS REST API ──► Feature Layer EN
         │                              │
         │                              ▼
@@ -45,20 +45,20 @@ Feature Layer ES
         └──► WhatsApp
 ```
 
-## Componentes implementados
+## Implemented Components
 
-* 3 QuickCapture para registro de incidentes.
-* 3 QuickCapture para inspecciones.
+* 3 QuickCapture applications for incident reporting.
+* 3 QuickCapture applications for inspections.
 * 6 webhooks.
-* 6 escenarios de automatización en Make.
-* 2 Feature Layers principales.
+* 6 automation scenarios in Make.
+* 2 main Feature Layers.
 * 2 Web Maps.
 * 2 ArcGIS Dashboards.
-* Traducción automatizada español-inglés.
-* Integración mediante ArcGIS REST API.
-* Notificaciones mediante WhatsApp.
+* Automated Spanish-to-English translation.
+* Integration through the ArcGIS REST API.
+* Notifications through WhatsApp.
 
-## Tecnologías utilizadas
+## Technologies Used
 
 * ArcGIS Online
 * ArcGIS QuickCapture
@@ -71,7 +71,7 @@ Feature Layer ES
 * Gemini
 * WhatsApp
 
-## Estructura del repositorio
+## Repository Structure
 
 ```text
 docs/
@@ -91,41 +91,40 @@ sample-data/
 diagrams/
 ```
 
-La documentación técnica se encuentra dentro de la carpeta [`docs/`](docs/).
+Technical documentation is available in the [`docs/`](docs/) directory.
 
-## Documentación
+## Documentation
 
-* [`Arquitectura y flujo de datos`](docs/architecture/data-flow.md)
-* [`QuickCapture de incidentes`](docs/quickcapture/incidents.md)
-* [`QuickCapture de inspecciones`](docs/quickcapture/inspections.md)
-* [`Automatización con Make`](docs/automation/make-workflow.md)
-* [`Flujo de traducción`](docs/automation/translation-workflow.md)
+* [`Architecture and Data Flow`](docs/architecture/data-flow.md)
+* [`Incident QuickCapture`](docs/quickcapture/incidents.md)
+* [`Inspection QuickCapture`](docs/quickcapture/inspections.md)
+* [`Make Automation`](docs/automation/make-workflow.md)
+* [`Translation Workflow`](docs/automation/translation-workflow.md)
 * [`Dashboards`](docs/dashboards/dashboards.md)
-* [`Privacidad y seguridad`](docs/security/data-privacy.md)
+* [`Data Privacy and Security`](docs/security/data-privacy.md)
 
-## Seguridad y privacidad
+## Security and Privacy
 
-Este repositorio contiene únicamente documentación técnica, diagramas, capturas sanitizadas y datos ficticios.
+This repository contains only technical documentation, diagrams, sanitized screenshots, and fictional data.
 
-No se incluyen:
+It does not include:
 
-* Datos personales.
-* Información médica real.
-* Coordenadas reales de incidentes.
-* Números telefónicos.
-* Credenciales.
+* Personal data.
+* Real medical information.
+* Real incident coordinates.
+* Phone numbers.
+* Credentials.
 * Tokens.
 * API keys.
-* Webhooks reales.
-* Endpoints privados.
-* URLs de servicios de producción.
-* Bases de datos originales.
+* Real webhooks.
+* Private endpoints.
+* Production service URLs.
+* Original databases.
 
-Los datos incluidos en `sample-data/` tienen únicamente fines demostrativos.
+The data included in `sample-data/` is provided for demonstration purposes only.
 
-## Alcance
+## Scope
 
-Este repositorio documenta la arquitectura y metodología utilizada durante el desarrollo del sistema.
+This repository documents the architecture and methodology used during the development of the system.
 
-No contiene la infraestructura de producción ni información suficiente para acceder a los servicios utilizados durante la implementación original.
-
+It does not contain the production infrastructure or sufficient information to access the services used during the original implementation.
