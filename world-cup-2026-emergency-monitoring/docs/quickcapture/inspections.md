@@ -1,36 +1,36 @@
-# QuickCapture de inspecciones
+# Inspection QuickCapture
 
-Se implementaron tres aplicaciones de **ArcGIS QuickCapture** para realizar registros de inspección, una por cada sede:
+Three **ArcGIS QuickCapture** applications were implemented for inspection records, one for each host city:
 
-* Ciudad de México
+* Mexico City
 * Guadalajara
 * Monterrey
 
-Estas aplicaciones fueron utilizadas por personal autorizado para registrar inspecciones operativas dentro de las sedes.
+These applications were used by authorized personnel to record operational inspections within the host cities.
 
-## Información registrada
+## Recorded Information
 
-Los registros podían incluir:
+Records could include:
 
-* Personal responsable
-* Corporación
-* Fecha y hora
-* Ubicación geográfica
-* Sede
-* Tipo de inspección
-* Observaciones
-* Información adicional
+* Responsible personnel
+* Organization
+* Date and time
+* Geographic location
+* Host city
+* Inspection type
+* Observations
+* Additional information
 
-## Flujo
+## Workflow
 
 ```text
-Personal autorizado
+Authorized Personnel
         │
         ▼
 ArcGIS QuickCapture
         │
         ▼
-Registro de inspección
+Inspection Record
         │
         ▼
 Feature Layer ES
@@ -42,15 +42,14 @@ Webhook
 Make
 ```
 
-Los registros de inspección utilizaban la misma infraestructura general del sistema, pero se almacenaban en campos destinados específicamente a este tipo de información.
+Inspection records used the same general system infrastructure but were stored in fields specifically designated for this type of information.
 
-## Evidencias
+## Evidence
 
-Las capturas sanitizadas se encuentran en:
+Sanitized screenshots are available at:
 
 ```text
 /screenshots/quickcapture/
 ```
 
-Las evidencias publicadas no contienen datos personales, coordenadas reales ni información operativa sen
-
+The published evidence does not contain personal data, real coordinates, or sensitive operational information.
