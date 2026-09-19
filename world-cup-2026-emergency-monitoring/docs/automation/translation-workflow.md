@@ -1,13 +1,13 @@
-# Flujo de traducción
+# Translation Workflow
 
-El sistema generaba una versión en inglés de los registros capturados originalmente en español.
+The system generated an English version of the records originally captured in Spanish.
 
-La traducción se realizaba dentro de los escenarios de Make mediante un módulo de **Gemini**.
+Translation was performed within the Make scenarios using a **Gemini** module.
 
-## Flujo
+## Workflow
 
 ```text
-Registro en español
+Record in Spanish
         │
         ▼
        Make
@@ -16,10 +16,10 @@ Registro en español
       Gemini
         │
         ▼
-Campos traducidos
+Translated Fields
         │
         ▼
-Reconstrucción del registro
+Record Reconstruction
         │
         ▼
 ArcGIS REST API
@@ -28,31 +28,30 @@ ArcGIS REST API
 Feature Layer EN
 ```
 
-## Proceso
+## Process
 
-1. Make recibe el registro original.
-2. Se identifican los campos que requieren traducción.
-3. Los campos seleccionados se envían a Gemini.
-4. Gemini devuelve la información en inglés.
-5. Make combina los campos traducidos con los datos que no requieren modificación.
-6. El nuevo registro se envía a ArcGIS mediante REST API.
-7. La información se almacena en la Feature Layer en inglés.
+1. Make receives the original record.
+2. The fields that require translation are identified.
+3. The selected fields are sent to Gemini.
+4. Gemini returns the information in English.
+5. Make combines the translated fields with the data that does not require modification.
+6. The new record is sent to ArcGIS through the REST API.
+7. The information is stored in the English Feature Layer.
 
-Los datos estructurales, como coordenadas, fechas, horas e identificadores, se conservan sin traducción.
+Structural data, such as coordinates, dates, times, and identifiers, is preserved without translation.
 
-## Resultado
+## Result
 
-El sistema mantiene dos versiones equivalentes de la información:
+The system maintains two equivalent versions of the information:
 
 ```text
 Feature Layer ES
         │
-        └──► Información original
+        └──► Original Information
 
 Feature Layer EN
         │
-        └──► Información traducida
+        └──► Translated Information
 ```
 
-No se incluyen prompts reales, credenciales, tokens ni configuraciones de producción.
-
+Real prompts, credentials, tokens, and production configurations are not included.
