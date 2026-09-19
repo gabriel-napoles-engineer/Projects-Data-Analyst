@@ -1,15 +1,15 @@
-# Automatización con Make
+# Automation with Make
 
-Make fue utilizado como plataforma de integración para procesar automáticamente los registros generados desde ArcGIS QuickCapture.
+Make was used as the integration platform to automatically process records generated from ArcGIS QuickCapture.
 
-Se implementaron seis escenarios:
+Six scenarios were implemented:
 
-* 3 para incidentes.
-* 3 para inspecciones.
+* 3 for incidents.
+* 3 for inspections.
 
-Cada QuickCapture utilizaba su propio webhook y escenario.
+Each QuickCapture application used its own webhook and scenario.
 
-## Flujo general
+## General Workflow
 
 ```text
 Webhook
@@ -26,24 +26,23 @@ Webhook
    └──► WhatsApp
 ```
 
-## Proceso
+## Process
 
-1. El webhook recibe el nuevo registro desde QuickCapture.
-2. Make procesa la información recibida.
-3. Los datos se almacenan en Google Sheets.
-4. Los campos necesarios se envían a Gemini para su traducción.
-5. Make construye el registro en inglés.
-6. El registro traducido se envía mediante ArcGIS REST API.
-7. La información se almacena en la Feature Layer en inglés.
-8. Se generan las notificaciones configuradas mediante WhatsApp.
+1. The webhook receives the new record from QuickCapture.
+2. Make processes the received information.
+3. The data is stored in Google Sheets.
+4. The required fields are sent to Gemini for translation.
+5. Make builds the English version of the record.
+6. The translated record is sent through the ArcGIS REST API.
+7. The information is stored in the English Feature Layer.
+8. The configured notifications are sent through WhatsApp.
 
-## Evidencias
+## Evidence
 
-Las capturas sanitizadas de los escenarios se encuentran en:
+Sanitized screenshots of the scenarios are available at:
 
 ```text
 /screenshots/make/
 ```
 
-No se publican webhooks, tokens, credenciales, IDs de conexiones ni endpoints reales.
-
+Webhooks, tokens, credentials, connection IDs, and real endpoints are not published.
