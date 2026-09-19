@@ -1,15 +1,14 @@
+# Visual Evidence
 
-# Evidencias visuales
+This folder contains sanitized screenshots of the system used as technical evidence for the project.
 
-Esta carpeta contiene capturas sanitizadas del sistema utilizadas como evidencia técnica del proyecto.
+## Contents
 
-## Contenido
+* `quickcapture/` — Incident and inspection data collection interfaces.
+* `dashboards/` — Dashboards in Spanish and English.
+* `maps/` — Web Maps and geospatial visualization.
+* `make/` — Automation scenarios in Make.
 
-* `quickcapture/` — Interfaces de captura de incidentes e inspecciones.
-* `dashboards/` — Dashboards en español e inglés.
-* `maps/` — Web Maps y visualización geoespacial.
-* `make/` — Escenarios de automatización en Make.
+All images were reviewed before publication.
 
-Todas las imágenes fueron revisadas antes de su publicación.
-
-No se incluyen datos personales, información médica, coordenadas sensibles, credenciales, tokens, webhooks ni configuraciones privadas.
+Personal data, medical information, sensitive coordinates, credentials, tokens, webhooks, and private configurations are not included.
