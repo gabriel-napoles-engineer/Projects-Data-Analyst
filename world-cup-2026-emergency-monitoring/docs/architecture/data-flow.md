@@ -59,5 +59,13 @@ Feature Layer ES
 
 El mismo flujo se utilizó para las tres sedes:
 
-* Ciudad
+* Ciudad de México.
+* Guadalajara.
+* Monterrey.
+
+Cada sede utilizó un QuickCapture de incidentes y uno de inspecciones, cada uno con su propio webhook y escenario de Make.
+
+Nota
+
+Este documento representa el flujo general del sistema. No se incluyen endpoints, tokens, webhooks, credenciales ni datos reales de producción.
 
