@@ -4,9 +4,9 @@ Esta carpeta contiene la documentación técnica del sistema, organizada por com
 
 ## Contenido
 
-* `architecture/` — Arquitectura general y flujo de datos.
-* `quickcapture/` — Documentación de captura de incidentes e inspecciones.
-* `automation/` — Flujos de automatización, integración y traducción.
+* `architecture/` — Descripción de la Arquitectura general y flujo de datos.
+* `quickcapture/` — Descripción de la Documentación de captura de incidentes e inspecciones.
+* `automation/` — Descripción de los Flujos de automatización, integración y traducción.
 * `dashboards/` — Descripción de mapas y dashboards.
-* `security/` — Privacidad, protección
+* `security/` — Descripción de Privacidad, protección de datos.
 
