@@ -1,50 +1,49 @@
-# Esquema de datos
+# Data Schema
 
-Esta carpeta contiene ejemplos sanitizados de los registros utilizados por el sistema.
+This folder contains sanitized examples of the records used by the system.
 
-Los archivos disponibles son:
+The available files are:
 
-* `incidents-sample.json` — Ejemplo de registro de incidente.
-* `inspections-sample.json` — Ejemplo de registro de inspección.
+* `incidents-sample.json` — Example of an incident record.
+* `inspections-sample.json` — Example of an inspection record.
 
-## Campos principales
+## Main Fields
 
-| Campo            | Descripción                                |
-| ---------------- | ------------------------------------------ |
-| `Fecha`          | Fecha y hora del registro                  |
-| `Nombre`         | Identificador o nombre del personal        |
-| `Corporacion`    | Corporación a la que pertenece el operador |
-| `Sede`           | Sede donde se genera el registro           |
-| `Latitud`        | Coordenada geográfica                      |
-| `Longitud`       | Coordenada geográfica                      |
-| `Altitud`        | Altitud registrada por el dispositivo      |
-| `Tipo_Incidente` | Clasificación del incidente                |
-| `Comentarios`    | Información adicional del registro         |
+| Field            | Description                                  |
+| ---------------- | -------------------------------------------- |
+| `Fecha`          | Record date and time                         |
+| `Nombre`         | Personnel identifier or name                 |
+| `Corporacion`    | Organization the operator belongs to         |
+| `Sede`           | Host city where the record was generated     |
+| `Latitud`        | Geographic coordinate                        |
+| `Longitud`       | Geographic coordinate                        |
+| `Altitud`        | Altitude recorded by the device              |
+| `Tipo_Incidente` | Incident classification                      |
+| `Comentarios`    | Additional information related to the record |
 
-## Campos médicos
+## Medical Fields
 
-Los registros de atención pueden incluir campos adicionales como:
+Medical assistance records may include additional fields such as:
 
-* Edad del paciente
-* Resumen de atención
-* Signos vitales
-* Tratamiento
-* Traslado hospitalario
-* Categoría de urgencia
-* Nacionalidad
-* Ubicación de la atención
+* Patient age
+* Medical assistance summary
+* Vital signs
+* Treatment
+* Hospital transfer
+* Emergency category
+* Nationality
+* Location of medical assistance
 
-## Inspecciones
+## Inspections
 
-Los registros de inspección utilizan la misma estructura general, incorporando campos específicos relacionados con:
+Inspection records use the same general structure while incorporating specific fields related to:
 
-* Tipo de inspección
-* Riesgos identificados
-* Observaciones
+* Inspection type
+* Identified risks
+* Observations
 
-## Privacidad
+## Privacy
 
-Todos los archivos incluidos en esta carpeta utilizan información ficticia o previamente sanitizada.
+All files included in this folder use fictional or previously sanitized information.
 
-No se incluyen datos personales, información médica real, coordenadas sensibles ni identificadores de producción.
-
+Personal data, real medical information, sensitive coordinates, and production identifiers are not included.
