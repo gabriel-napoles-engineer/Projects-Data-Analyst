@@ -4,7 +4,7 @@ Sistema automatizado para la generación y validación de certificados de capaci
 
 ## Descripción
 
-El proyecto surge de la necesidad de mejorar el control de los certificados emitidos para cursos de combate contra incendios.
+El proyecto surge de la necesidad de mejorar el control de los certificados emitidos para cursos en materia de Protección Civil.
 
 Anteriormente, cada certificado era elaborado de forma manual. Esto generaba dos problemas principales:
 
