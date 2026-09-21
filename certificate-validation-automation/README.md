@@ -20,12 +20,12 @@ Google Sheets funciona como base de datos para almacenar la información de los 
 A partir de estos registros, un script desarrollado en Google Apps Script realiza automáticamente:
 
 1. Lectura de los datos del participante.
-2. Generación del certificado.
-3. Asignación del folio correspondiente.
+2. Asignación del folio correspondiente.
+3. Generación de un documento de respaldo para validación.
 4. Generación de un código QR mediante una API.
-5. Incorporación del código QR al certificado.
-6. Generación de un documento de respaldo para validación.
-7. Vinculación del QR con dicho documento.
+5. Vinculación del QR con dicho documento.
+6. Generación del certificado.
+7. Incorporación del código QR al certificado.
 
 De esta manera, el código QR permite consultar la información asociada al certificado y comprobar que los datos coincidan con el registro generado originalmente.
 
