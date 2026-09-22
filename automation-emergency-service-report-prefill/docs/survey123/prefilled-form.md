@@ -1,67 +1,67 @@
 # Survey123 Prefilled Form
 
-Este documento describe cómo se genera el enlace prellenado utilizado para los reportes de servicios de emergencia en **ArcGIS Survey123**.
+This document describes how the prefilled link used for emergency service reports is generated in **ArcGIS Survey123**.
 
-## Objetivo
+## Objective
 
-El prellenado permite cargar automáticamente información del incidente antes de que el personal operativo abra el formulario.
+Prefilling allows incident information to be loaded automatically before operational personnel open the form.
 
-De esta manera, se evita capturar manualmente datos que ya fueron obtenidos desde **Active911** y el **estado de fuerza**.
+This avoids manually entering data that has already been obtained from **Active911** and the **personnel and resource status** records.
 
-## Estructura del enlace
+## Link Structure
 
-Survey123 permite asignar valores a campos específicos mediante parámetros incluidos en la URL.
+Survey123 allows values to be assigned to specific fields through parameters included in the URL.
 
-Ejemplo:
+Example:
 
 ```text
 https://survey123.arcgis.com/share/XXXX?field:correo_electr_nico=example@gmail.com&field:folio_active_911=000010
 ```
 
-La estructura general es:
+The general structure is:
 
 ```text
 https://survey123.arcgis.com/share/FORM_ID?field:FIELD_NAME=VALUE
 ```
 
-Para agregar más campos se utiliza `&`:
+Additional fields are added using `&`:
 
 ```text
 ?field:campo1=valor1&field:campo2=valor2&field:campo3=valor3
 ```
 
-## Datos utilizados
+## Data Sources
 
-El enlace se construye dinámicamente en Make utilizando información proveniente de dos fuentes principales.
+The link is dynamically generated in Make using information from two main sources.
 
 ### Active911
 
-Datos extraídos del correo mediante el modelo de IA, por ejemplo:
+Data extracted from the email using the AI model, including:
 
-* Correo
-* Estación
-* Folio Active911
-* Folio CECOM
-* Calle
-* Colonia
-* Incidente
-* Giro
-* Unidades
+* Email
+* Station
+* Active911 reference number
+* CECOM reference number
+* Street
+* Neighborhood
+* Incident
+* Incident category
+* Units
 
-### Estado de Fuerza
+### Personnel and Resource Status
 
-Información obtenida del último registro disponible, como:
+Information obtained from the latest available record, including:
 
-* Personal en turno
-* Unidades activas
-* Asignación de personal
-* Estación
+* Personnel on duty
+* Active units
+* Personnel assignments
+* Station
 
-## Generación en Make
+## Generation in Make
 
-Los valores obtenidos durante el flujo se convierten en variables y posteriormente se insertan en la URL de Survey123.
+The values obtained during the workflow are converted into variables and then inserted into the Survey123 URL.
 
-Ejemplo simplificado:
+Simplified example:
 
 ```text
 https://survey123.arcgis.com/share/XXXX
@@ -71,17 +71,16 @@ https://survey123.arcgis.com/share/XXXX
 &field:incidente={{Incidente}}
 ```
 
-El enlace resultante se almacena junto con la información procesada y posteriormente se envía por correo electrónico a la estación correspondiente.
+The resulting link is stored together with the processed information and is then sent by email to the corresponding station.
 
-## Resultado
+## Result
 
-Cuando el personal abre el enlace, Survey123 carga automáticamente los campos disponibles con la información del servicio.
+When operational personnel open the link, Survey123 automatically populates the available fields with the service information.
 
-El usuario únicamente debe revisar los datos y completar la información que no puede ser generada automáticamente, principalmente la descripción de las actividades realizadas durante la atención de la emergencia.
+The user only needs to review the data and complete the information that cannot be generated automatically, mainly the description of the activities performed during the emergency response.
 
-## Consideraciones
+## Considerations
 
-Los nombres utilizados en `field:` deben corresponder exactamente con los nombres internos de los campos configurados en Survey123.
+The names used in `field:` must exactly match the internal field names configured in Survey123.
 
-También es necesario codificar correctamente caracteres especiales, espacios y valores que puedan afectar la estructura de la URL.
-
+Special characters, spaces, and values that could affect the URL structure must also be properly encoded.
