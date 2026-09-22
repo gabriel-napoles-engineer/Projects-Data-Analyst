@@ -124,4 +124,6 @@ This makes it possible to verify that the information presented on the certifica
 
 ## Result
 
-The automated workflow first generates the digital supporting evidence, links it through a QR code, and then incorporates that code into the fi
+The automated workflow first generates the digital supporting evidence, links it through a QR code, and then incorporates that code into the final certificate.
+
+This ensures that each certificate maintains a direct reference to its validation document, improving traceability and helping detect modified documents.
