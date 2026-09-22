@@ -1,130 +1,127 @@
 # Data Flow
 
-Este documento describe el flujo de información utilizado para generar y validar los certificados de capacitación.
+This document describes the information flow used to generate and validate training certificates.
 
-## Flujo general
+## General Flow
 
 ```text
 Google Sheets
      ↓
 Google Apps Script
      ↓
-Lectura de datos del participante
+Participant data retrieval
      ↓
-Generación del documento de validación
+Validation document generation
      ↓
-Almacenamiento en Google Drive
+Storage in Google Drive
      ↓
-Obtención de la URL del documento
+Document URL retrieval
      ↓
-Generación del código QR
+QR code generation
      ↓
-Generación del certificado
+Certificate generation
      ↓
-Inserción del código QR
+QR code insertion
      ↓
-Certificado final
+Final certificate
 ```
 
-## 1. Registro de información
+## 1. Information Registration
 
-La información de cada participante se almacena en Google Sheets.
+Each participant's information is stored in Google Sheets.
 
-Los principales campos utilizados son:
+The main fields used are:
 
-* Nombre
-* Curso
-* Empresa
-* Fecha de expiración
-* Folio
-* Horas de curso
+* Name
+* Course
+* Company
+* Expiration date
+* Certificate number
+* Training hours
 
-## 2. Procesamiento con Google Apps Script
+## 2. Processing with Google Apps Script
 
-Google Apps Script obtiene la información registrada en la hoja de cálculo y ejecuta automáticamente el proceso de generación de documentos.
+Google Apps Script retrieves the information stored in the spreadsheet and automatically executes the document generation process.
 
-## 3. Generación del documento de validación
+## 3. Validation Document Generation
 
-El sistema genera primero un documento de respaldo con la información asociada al certificado:
+The system first generates a supporting validation document containing the information associated with the certificate:
 
-* Nombre
-* Curso
-* Empresa
-* Fecha de expiración
-* Folio único
-* Horas de curso
+* Name
+* Course
+* Company
+* Expiration date
+* Unique certificate number
+* Training hours
 
-Este documento funciona como evidencia para comprobar posteriormente la información del certificado.
+This document serves as evidence for subsequently verifying the information contained in the certificate.
 
-## 4. Almacenamiento en Google Drive
+## 4. Storage in Google Drive
 
-El documento de validación generado se almacena en Google Drive.
+The generated validation document is stored in Google Drive.
 
-Una vez creado, el sistema obtiene la dirección electrónica correspondiente al documento.
+Once created, the system retrieves the corresponding document URL.
 
 ```text
-Datos del participante
+Participant data
         ↓
-Documento de validación
+Validation document
         ↓
 Google Drive
         ↓
-URL del documento
+Document URL
 ```
 
-## 5. Generación del código QR
+## 5. QR Code Generation
 
-La URL del documento almacenado en Google Drive se utiliza para generar un código QR mediante una API.
+The URL of the validation document stored in Google Drive is used to generate a QR code through an API.
 
 ```text
-URL del documento de validación
+Validation document URL
               ↓
-        API de código QR
+        QR Code API
               ↓
-          Código QR
+          QR Code
 ```
 
-Por lo tanto, cada código QR queda asociado directamente con la evidencia correspondiente a ese certificado.
+Therefore, each QR code is directly associated with the supporting evidence corresponding to that certificate.
 
-## 6. Generación del certificado
+## 6. Certificate Generation
 
-Posteriormente se genera el certificado con la información del participante y el mismo folio utilizado en el documento de validación.
+The certificate is then generated using the participant's information and the same certificate number used in the validation document.
 
-El certificado contiene:
+The certificate contains:
 
-* Nombre
-* Curso
-* Empresa
-* Fecha de expiración
-* Folio único
-* Horas de curso
-* Código QR
+* Name
+* Course
+* Company
+* Expiration date
+* Unique certificate number
+* Training hours
+* QR code
 
-El código QR generado previamente se inserta directamente en el certificado.
+The previously generated QR code is inserted directly into the certificate.
 
-## 7. Validación
+## 7. Validation
 
-Cuando se escanea el código QR del certificado, este dirige al documento de validación almacenado en Google Drive.
+When the QR code on the certificate is scanned, it redirects to the validation document stored in Google Drive.
 
 ```text
-Certificado
+Certificate
      │
-     │ Escaneo del QR
+     │ QR scan
      ↓
-Código QR
+QR Code
      ↓
-URL de Google Drive
+Google Drive URL
      ↓
-Documento de validación
+Validation document
      ↓
-Comparación de información
+Information comparison
 ```
 
-Esto permite comprobar que la información presentada en el certificado corresponda con la evidencia generada originalmente por el sistema.
+This makes it possible to verify that the information presented on the certificate matches the evidence originally generated by the system.
 
-## Resultado
+## Result
 
-El flujo automatizado permite generar primero la evidencia digital, vincularla mediante un código QR y posteriormente incorporar dicho código al certificado final.
-
-De esta manera, cada certificado mantiene una referencia directa a su documento de validación, mejorando la trazabilidad y facilitando la detección de documentos modificados.
-
+The automated workflow first generates the digital supporting evidence, links it through a QR code, and then incorporates that code into the fi
