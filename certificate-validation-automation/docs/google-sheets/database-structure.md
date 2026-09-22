@@ -1,33 +1,33 @@
 # Database Structure
 
-Google Sheets se utiliza como base de datos principal para almacenar la información de los participantes y controlar el proceso automático de generación de certificados.
+Google Sheets is used as the main database to store participant information and manage the automated certificate generation process.
 
-Cada fila representa un certificado individual.
+Each row represents an individual certificate.
 
-## Estructura de columnas
+## Column Structure
 
-| Columna                     | Descripción                                                                                                      |
-| --------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `FOLIO`                     | Identificador único asignado al certificado.                                                                     |
-| `NOMBRE`                    | Nombre completo del participante.                                                                                |
-| `EMPRESA`                   | Empresa u organización a la que pertenece el participante.                                                       |
-| `CORREO`                    | Dirección de correo electrónico asociada al participante.                                                        |
-| `CURSO`                     | Nombre del curso acreditado.                                                                                     |
-| `HORAS`                     | Duración del curso en horas.                                                                                     |
-| `INSTRUCTOR`                | Nombre del instructor responsable del curso.                                                                     |
-| `FECHA`                     | Fecha en la que se realizó o acreditó el curso.                                                                  |
-| `VIGENCIA`                  | Fecha de expiración o periodo de vigencia del certificado.                                                       |
-| `Fecha Ultimo envio`        | Registra la fecha del último envío realizado por el sistema.                                                     |
-| `Evidencia`                 | Almacena la referencia o URL del documento de validación generado en Google Drive.                               |
-| `QR`                        | Almacena la información o referencia del código QR generado a partir de la URL de evidencia.                     |
-| `Constancia`                | Almacena la referencia o URL de la constancia generada.                                                          |
-| `Fecha ultima modificacion` | Registra la última fecha en la que el registro fue modificado.                                                   |
-| `Generar Carpeta`           | Campo de control utilizado para ejecutar la creación de la carpeta o estructura correspondiente en Google Drive. |
-| `FALSE`                     | Campo auxiliar utilizado por el proceso de automatización como valor booleano de control.                        |
+| Column                      | Description                                                                                          |
+| --------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `FOLIO`                     | Unique identifier assigned to the certificate.                                                       |
+| `NOMBRE`                    | Participant's full name.                                                                             |
+| `EMPRESA`                   | Company or organization to which the participant belongs.                                            |
+| `CORREO`                    | Email address associated with the participant.                                                       |
+| `CURSO`                     | Name of the completed course.                                                                        |
+| `HORAS`                     | Course duration in hours.                                                                            |
+| `INSTRUCTOR`                | Name of the instructor responsible for the course.                                                   |
+| `FECHA`                     | Date on which the course was completed or accredited.                                                |
+| `VIGENCIA`                  | Certificate expiration date or validity period.                                                      |
+| `Fecha Ultimo envio`        | Records the date of the most recent delivery performed by the system.                                |
+| `Evidencia`                 | Stores the reference or URL of the validation document generated in Google Drive.                    |
+| `QR`                        | Stores the information or reference for the QR code generated from the validation document URL.      |
+| `Constancia`                | Stores the reference or URL of the generated certificate.                                            |
+| `Fecha ultima modificacion` | Records the most recent date on which the entry was modified.                                        |
+| `Generar Carpeta`           | Control field used to trigger the creation of the corresponding folder or structure in Google Drive. |
+| `FALSE`                     | Auxiliary field used by the automation process as a Boolean control value.                           |
 
-## Datos principales
+## Main Data Fields
 
-Los campos utilizados directamente para generar la documentación son:
+The fields used directly to generate the documentation are:
 
 ```text
 FOLIO
@@ -41,11 +41,11 @@ FECHA
 VIGENCIA
 ```
 
-Estos datos representan la información original registrada para cada participante.
+These fields represent the original information recorded for each participant.
 
-## Campos de automatización
+## Automation Fields
 
-Durante la ejecución de Google Apps Script se generan o actualizan campos adicionales:
+During Google Apps Script execution, additional fields are generated or updated:
 
 ```text
 Fecha Ultimo envio
@@ -56,41 +56,40 @@ Fecha ultima modificacion
 Generar Carpeta
 ```
 
-Estos campos permiten al script conocer el estado del proceso y conservar las referencias a los documentos generados.
+These fields allow the script to track the current process status and retain references to the generated documents.
 
-## Relación con los documentos
+## Relationship with Generated Documents
 
-El registro de Google Sheets funciona como origen central de la información:
+The Google Sheets record serves as the central source of information:
 
 ```text
 Google Sheets
      │
-     ├── Datos del participante
+     ├── Participant data
      │
-     ├── Folio único
+     ├── Unique certificate number
      │
-     └── Datos del curso
+     └── Course information
              ↓
       Google Apps Script
              │
-             ├── Documento de evidencia
-             ├── URL de evidencia
-             ├── Código QR
-             └── Constancia
+             ├── Validation document
+             ├── Validation document URL
+             ├── QR code
+             └── Certificate
 ```
 
-El mismo `FOLIO` se utiliza tanto en la constancia como en el documento de evidencia, permitiendo relacionar ambos documentos.
+The same `FOLIO` is used in both the certificate and the validation document, allowing both documents to be linked to the same record.
 
-## Consideraciones
+## Considerations
 
-La hoja de cálculo utilizada en producción contiene información personal, por lo que los ejemplos publicados en este repositorio deben utilizar únicamente datos ficticios o sanitizados.
+The production spreadsheet contains personal information, so any examples published in this repository must use only fictional or sanitized data.
 
-No se deben publicar:
+The following information must not be published:
 
-* Nombres reales de participantes
-* Correos electrónicos reales
-* URLs privadas de Google Drive
-* Folios asociados a certificados reales
-* IDs de archivos o carpetas privadas
-* Credenciales o configuraciones sensibles
-
+* Real participant names
+* Real email addresses
+* Private Google Drive URLs
+* Certificate numbers associated with real certificates
+* Private file or folder IDs
+* Credentials or sensitive configuration data
