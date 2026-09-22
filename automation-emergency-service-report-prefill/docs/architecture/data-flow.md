@@ -1,50 +1,50 @@
 # Data Flow
 
-Este documento describe el flujo de información utilizado para generar enlaces prellenados de reportes de servicios de emergencia.
+This document describes the information flow used to generate prefilled links for emergency service reports.
 
-## Flujo general
+## General Flow
 
 ```text
 Active911
     ↓
-Correo electrónico de alarma
+Alarm email
     ↓
 Make
     ↓
-Detección de correo no leído
+Unread email detection
     ↓
-Procesamiento con IA
+AI processing
     ↓
-Extracción de datos del incidente
+Incident data extraction
     ↓
-Consulta del último estado de fuerza
+Latest personnel and resource status lookup
     ↓
-Asignación de variables
+Variable assignment
     ↓
-Generación del enlace Survey123
+Survey123 link generation
     ↓
-Registro de información
+Information logging
     ↓
-Envío del enlace a la estación correspondiente
+Link delivery to the corresponding station
 ```
 
-## 1. Generación de la alarma
+## 1. Alarm Generation
 
-Cuando se genera un servicio de emergencia en **Active911**, la plataforma envía automáticamente un correo electrónico con la información disponible del incidente.
+When an emergency service is generated in **Active911**, the platform automatically sends an email containing the available incident information.
 
-## 2. Detección del correo
+## 2. Email Detection
 
-Un escenario en **Make** revisa periódicamente el buzón de correo.
+A scenario in **Make** periodically checks the email inbox.
 
-Cuando identifica un mensaje nuevo proveniente de Active911:
+When it identifies a new message from Active911:
 
-* Verifica que no haya sido procesado.
-* Lo marca como leído.
-* Envía su contenido al módulo de inteligencia artificial.
+* It verifies that the message has not already been processed.
+* It marks the message as read.
+* It sends the content to the artificial intelligence module.
 
-## 3. Extracción de información
+## 3. Information Extraction
 
-El modelo de IA interpreta el contenido del correo y genera una estructura JSON con los principales datos del servicio.
+The AI model interprets the email content and generates a JSON structure containing the main service information.
 
 ```json
 {
@@ -60,43 +60,42 @@ El modelo de IA interpreta el contenido del correo y genera una estructura JSON 
 }
 ```
 
-## 4. Consulta del estado de fuerza
+## 4. Personnel and Resource Status Lookup
 
-Mediante un módulo **Search Rows**, el escenario consulta el último estado de fuerza correspondiente a la estación.
+Using a **Search Rows** module, the scenario retrieves the latest personnel and resource status record corresponding to the station.
 
-De esta fuente se obtiene información relacionada con:
+This source provides information related to:
 
-* Personal operativo en turno.
-* Unidades activas.
-* Asignación del personal a las unidades.
+* Operational personnel on duty.
+* Active units.
+* Personnel assigned to each unit.
 
-## 5. Preparación de variables
+## 5. Variable Preparation
 
-El módulo **Set Variables** organiza la información obtenida del correo y del estado de fuerza para utilizarla en los siguientes pasos del escenario.
+The **Set Variables** module organizes the information obtained from the email and the personnel and resource status record so it can be used in the following steps of the scenario.
 
-## 6. Generación del formulario prellenado
+## 6. Prefilled Form Generation
 
-Los datos procesados se incorporan como parámetros dentro de la URL de **ArcGIS Survey123**.
+The processed data is added as parameters to the **ArcGIS Survey123** URL.
 
-Ejemplo:
+Example:
 
 ```text
 https://survey123.arcgis.com/share/XXXX?field:correo_electr_nico=example@gmail.com&field:folio_active_911=000010
 ```
 
-De esta forma, los campos correspondientes se cargan automáticamente cuando el personal abre el formulario.
+This allows the corresponding fields to be populated automatically when operational personnel open the form.
 
-## 7. Registro de información
+## 7. Information Logging
 
-Mediante **Add a Row**, el escenario almacena la información procesada junto con el enlace generado para el reporte de servicio.
+Using **Add a Row**, the scenario stores the processed information together with the generated link for the service report.
 
-## 8. Envío a la estación
+## 8. Delivery to the Station
 
-Finalmente, el módulo **Send an Email** envía el enlace prellenado a la estación correspondiente.
+Finally, the **Send an Email** module sends the prefilled link to the corresponding station.
 
-El personal operativo abre el formulario y completa principalmente la descripción de las actividades realizadas durante el servicio.
+Operational personnel open the form and mainly complete the description of the activities performed during the emergency response.
 
-## Resultado
+## Result
 
-El flujo integra automáticamente la información de **Active911** y del **estado de fuerza**, reduciendo aproximadamente un **80 %** del llenado manual requerido para generar los reportes de servicios de emergencia.
-
+The workflow automatically integrates information from **Active911** and the **personnel and resource status** records, reducing the manual data entry required to generate emergency service reports by approximately **80%**.
