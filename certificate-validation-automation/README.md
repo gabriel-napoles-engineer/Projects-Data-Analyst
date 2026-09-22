@@ -1,106 +1,55 @@
 # Certificate Validation Automation
 
-Sistema automatizado para la generación y validación de certificados de capacitación mediante **Google Sheets**, **Google Apps Script** y códigos **QR**.
+Automated system for generating and validating training certificates using **Google Sheets**, **Google Apps Script**, and **QR codes**.
 
-## Descripción
+## Description
 
-El proyecto surge de la necesidad de mejorar el control de los certificados emitidos para cursos en materia de Protección Civil.
+This project was developed to improve the management and validation of certificates issued for Civil Protection training courses.
 
-Anteriormente, cada certificado era elaborado de forma manual. Esto generaba dos problemas principales:
+Previously, each certificate was created manually. This resulted in two main issues:
 
-* El proceso requería aproximadamente **6 minutos por certificado**.
-* Algunos certificados eran modificados posteriormente, principalmente cambiando nombres mientras se conservaban folios existentes, provocando inconsistencias entre los documentos presentados y los registros internos.
+* The process required approximately **6 minutes per certificate**.
+* Some certificates were later modified, mainly by changing participant names while retaining existing certificate numbers, causing inconsistencies between submitted documents and internal records.
 
-Para solucionar esta situación se desarrolló un flujo automatizado basado en **Google Sheets y Google Apps Script**.
+To address these issues, an automated workflow based on **Google Sheets and Google Apps Script** was developed.
 
-## Solución implementada
+## Implemented Solution
 
-Google Sheets funciona como base de datos para almacenar la información de los participantes.
+Google Sheets serves as the database for storing participant information.
 
-A partir de estos registros, un script desarrollado en Google Apps Script realiza automáticamente:
+Based on these records, a script developed in Google Apps Script automatically performs the following tasks:
 
-1. Lectura de los datos del participante.
-2. Asignación del folio correspondiente.
-3. Generación de un documento de respaldo para validación.
-4. Generación de un código QR mediante una API.
-5. Vinculación del QR con dicho documento.
-6. Generación del certificado.
-7. Incorporación del código QR al certificado.
+1. Reads the participant data.
+2. Assigns the corresponding certificate number.
+3. Generates a validation document as a supporting record.
+4. Generates a QR code through an API.
+5. Links the QR code to the validation document.
+6. Generates the certificate.
+7. Adds the QR code to the certificate.
 
-De esta manera, el código QR permite consultar la información asociada al certificado y comprobar que los datos coincidan con el registro generado originalmente.
+This allows the QR code to provide access to the information associated with the certificate and verify that the data matches the record originally generated.
 
-## Información del certificado
+## Certificate Information
 
-Cada certificado contiene:
+Each certificate contains:
 
-* Nombre del participante
-* Curso
-* Empresa
-* Fecha de expiración
-* Folio único
-* Horas de capacitación
-* Código QR
+* Participant name
+* Course
+* Company
+* Expiration date
+* Unique certificate number
+* Training hours
+* QR code
 
-## Documento de validación
+## Validation Document
 
-El código QR dirige a un documento de respaldo generado automáticamente que contiene:
+The QR code redirects to an automatically generated validation document containing:
 
-* Nombre del participante
-* Curso
-* Empresa
-* Fecha de expiración
-* Folio único
-* Horas de capacitación
+* Participant name
+* Course
+* Company
+* Expiration date
+* Unique certificate number
+* Training hours
 
-El folio y los datos del documento de validación permiten comprobar la correspondencia con el certificado presentado.
-
-## Tecnologías
-
-* Google Sheets
-* Google Apps Script
-* Google Drive
-* API para generación de códigos QR
-* Documentos y plantillas de Google
-
-## Resultados
-
-Antes de la automatización, la elaboración manual de un certificado requería aproximadamente **6 minutos**.
-
-Con el nuevo flujo, el proceso completo tarda aproximadamente **20 segundos por certificado**, incluyendo la generación del código QR y del documento de respaldo.
-
-Esto representa una reducción aproximada del **94.4 % en el tiempo de generación**.
-
-Además de reducir considerablemente el trabajo manual, el sistema proporciona un mecanismo adicional para validar la autenticidad y trazabilidad de los certificados emitidos.
-
-## Estructura del repositorio
-
-```text
-certificate-validation-automation/
-│
-├── README.md
-├── docs/
-├── src/
-├── samples/
-├── screenshots/
-├── appsscript.json
-├── .gitignore
-└── LICENSE
-```
-
-La documentación técnica, arquitectura, flujo de datos y ejemplos sanitizados se encuentran en las carpetas correspondientes.
-
-## Seguridad y privacidad
-
-Los archivos publicados en este repositorio utilizan información de ejemplo.
-
-No se incluyen:
-
-* Datos personales reales
-* Certificados reales
-* Credenciales
-* API keys
-* Tokens
-* IDs privados de Google Drive
-* URLs privadas
-* Información confidencial de participantes o empresas
-
+The certificate number and the information contained in the validation document make it possible to verify that they correspond to
