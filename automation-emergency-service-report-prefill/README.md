@@ -1,81 +1,81 @@
 # Emergency Service Report Prefill
 
-Este repositorio documenta una solución desarrollada para automatizar el prellenado de reportes de servicios de emergencia de Bomberos Querétaro.
+This repository documents a solution developed to automate the prefill process for emergency service reports used by Bomberos Querétaro.
 
-El objetivo principal es reducir el tiempo que el personal operativo dedica a recopilar información desde diferentes plataformas antes de completar un reporte de servicio.
+The main objective is to reduce the time operational personnel spend collecting information from different platforms before completing a service report.
 
-## Descripción
+## Description
 
-Cada servicio de emergencia es despachado mediante **Active911**, plataforma que contiene la información inicial del incidente.
+Each emergency service is dispatched through **Active911**, a platform that contains the initial incident information.
 
-Cuando se genera una alarma, Active911 envía automáticamente un correo electrónico con los datos del servicio. Un escenario desarrollado en **Make** procesa esta información y la combina con el último **estado de fuerza** registrado por la estación correspondiente.
+When an alarm is generated, Active911 automatically sends an email containing the service details. A scenario developed in **Make** processes this information and combines it with the latest **personnel and resource status** submitted by the corresponding station.
 
-Posteriormente, se genera un enlace de **ArcGIS Survey123** con campos previamente llenados, permitiendo que el personal operativo únicamente complete la información relacionada con las actividades realizadas durante la atención del servicio.
+An **ArcGIS Survey123** link is then generated with predefined fields already completed, allowing operational personnel to enter only the information related to the activities performed during the emergency response.
 
-## Flujo general
+## General Flow
 
 ```text
 Active911
     ↓
-Correo de alarma
+Alarm email
     ↓
 Make
     ↓
-Procesamiento con IA
+AI processing
     ↓
-Extracción de datos del incidente
+Incident data extraction
     ↓
-Consulta del estado de fuerza
+Personnel and resource status lookup
     ↓
-Generación de enlace Survey123
+Survey123 link generation
     ↓
-Envío del formulario prellenado
+Prefilled form delivery
     ↓
-Personal operativo
+Operational personnel
 ```
 
-## Tecnologías utilizadas
+## Technologies Used
 
 * Active911
 * Make
-* Inteligencia Artificial
+* Artificial Intelligence
 * ArcGIS Survey123
-* Correo electrónico
-* Base de datos de estados de fuerza
+* Email
+* Personnel and resource status database
 
-## Información procesada
+## Processed Information
 
-El modelo de IA extrae del correo de Active911 información como:
+The AI model extracts information from the Active911 email such as:
 
-* Correo
-* Estación
-* Folio Active911
-* Folio CECOM
-* Calle
-* Colonia
-* Incidente
-* Giro
-* Unidades
+* Email
+* Station
+* Active911 reference number
+* CECOM reference number
+* Street
+* Neighborhood
+* Incident
+* Incident category
+* Units
 
-Esta información se complementa con los datos del último estado de fuerza disponible.
+This information is combined with the data from the latest available personnel and resource status record.
 
 ## Survey123 Prefill
 
-Survey123 permite enviar información directamente a campos específicos mediante parámetros incluidos en la URL del formulario.
+Survey123 allows information to be passed directly into specific fields using parameters included in the form URL.
 
-Ejemplo:
+Example:
 
 ```text
 https://survey123.arcgis.com/share/XXXX?field:correo_electr_nico=example@gmail.com&field:folio_active_911=000010
 ```
 
-El escenario genera dinámicamente este enlace utilizando la información obtenida durante el proceso.
+The scenario dynamically generates this link using the information obtained during the process.
 
-## Resultado
+## Result
 
-La implementación permitió automatizar aproximadamente el **80 % del llenado de los reportes de servicios de emergencia**, reduciendo la captura manual y centralizando información que anteriormente debía consultarse en diferentes plataformas.
+The implementation automated approximately **80% of the emergency service report completion process**, reducing manual data entry and centralizing information that previously had to be retrieved from multiple platforms.
 
-## Estructura del repositorio
+## Repository Structure
 
 ```text
 emergency-service-report-prefill/
@@ -87,11 +87,10 @@ emergency-service-report-prefill/
 └── evidence/
 ```
 
-La carpeta `docs/` contiene la documentación técnica del flujo, `examples/` incluye ejemplos sanitizados de los datos procesados y `evidence/` contiene evidencia visual del funcionamiento del sistema.
+The `docs/` directory contains the technical workflow documentation, `examples/` includes sanitized examples of the processed data, and `evidence/` contains visual evidence of the system's operation.
 
-## Privacidad
+## Privacy
 
-Los ejemplos y evidencias incluidos en este repositorio deben mantenerse sanitizados.
+All examples and evidence included in this repository must remain sanitized.
 
-No se incluyen datos personales, información sensible de emergencias, credenciales, tokens, direcciones reales, correos privados ni configuraciones internas de los sistemas utilizados.
-
+The repository does not include personal data, sensitive emergency information, credentials, tokens, real addresses, private email addresses, or internal system configurations.
