@@ -1,0 +1,11 @@
+[
+    {
+        "result": "[\n{\n\"Correo\": \"example@gmail.com\",\n\"Estacion\": \"Estación%20X\",\n\"Active911\": \"XXXX\",\n\"Cecom\": \"XXXX\",\n\"Calle\": \"XXXX%20XXXX%20XXXX\",\n\"Colonia\": \"XXXX%20XXXX%20XXXX\",\n\"Incidente\": \"XXXX\",\n\"Giro\": \"Casa%20Habitación\",\n\"Unidades\": \"V1,SQ1\"\n}\n]",
+        "baseModel": "gemini-2.5-flash",
+        "modelVersion": "gemini-2.5-flash",
+        "usageMetadata": {
+            "promptTokenCount": 3258,
+            "outputTokenCount": 2731
+        }
+    }
+]
