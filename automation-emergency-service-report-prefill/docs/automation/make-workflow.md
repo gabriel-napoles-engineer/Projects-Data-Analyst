@@ -1,8 +1,8 @@
 # Make Workflow
 
-Este documento describe el escenario desarrollado en **Make** para automatizar el prellenado de reportes de servicios de emergencia.
+This document describes the scenario developed in **Make** to automate the prefill process for emergency service reports.
 
-## Flujo del escenario
+## Scenario Flow
 
 ```text
 Check Inbox
@@ -22,19 +22,19 @@ Send an Email
 
 ## 1. Check Inbox
 
-El escenario revisa periódicamente el buzón de correo en busca de mensajes no leídos provenientes de **Active911**.
+The scenario periodically checks the email inbox for unread messages from **Active911**.
 
-La ejecución se realiza aproximadamente cada **45 minutos**.
+The scenario runs approximately every **45 minutes**.
 
 ## 2. Mark as Read
 
-Cuando se identifica un correo válido, el mensaje se marca como leído para evitar que vuelva a ser procesado en ejecuciones posteriores.
+When a valid email is identified, the message is marked as read to prevent it from being processed again during subsequent executions.
 
 ## 3. AI Extraction
 
-El contenido del correo se envía a un modelo de inteligencia artificial.
+The email content is sent to an artificial intelligence model.
 
-El modelo analiza el mensaje y devuelve la información del incidente en formato JSON.
+The model analyzes the message and returns the incident information in JSON format.
 
 ```json
 {
@@ -52,42 +52,15 @@ El modelo analiza el mensaje y devuelve la información del incidente en formato
 
 ## 4. Search Rows
 
-El módulo **Search Rows** consulta el último estado de fuerza disponible.
+The **Search Rows** module retrieves the latest available personnel and resource status record.
 
-Esta información permite obtener datos relacionados con:
+This information provides data related to:
 
-* Personal operativo en turno.
-* Unidades activas.
-* Asignación de personal por unidad.
-* Estación correspondiente.
+* Operational personnel on duty.
+* Active units.
+* Personnel assigned to each unit.
+* Corresponding station.
 
 ## 5. Set Variables
 
-El módulo **Set Variables** organiza la información obtenida del correo y del estado de fuerza en variables reutilizables.
-
-Estas variables se utilizan para construir el registro y el enlace prellenado de Survey123.
-
-## 6. Add a Row
-
-El módulo **Add a Row** registra la información procesada y genera el enlace correspondiente al formulario de Survey123.
-
-El enlace incluye parámetros para prellenar automáticamente los campos disponibles.
-
-Ejemplo:
-
-```text
-https://survey123.arcgis.com/share/XXXX?field:correo_electr_nico=example@gmail.com&field:folio_active_911=000010
-```
-
-## 7. Send an Email
-
-Finalmente, el escenario envía un correo electrónico a la estación correspondiente.
-
-El mensaje contiene el enlace al formulario de **Survey123** con la información previamente cargada.
-
-## Resultado
-
-El escenario integra datos provenientes de **Active911** y del **estado de fuerza** para generar automáticamente un formulario prellenado.
-
-Esto reduce aproximadamente un **80 %** del trabajo manual requerido para completar los reportes de servicios de emergencia.
-
+The **Set Variables** module organizes the information obtained from
