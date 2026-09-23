@@ -1,98 +1,98 @@
 # Maintenance Inventory System
 
-Sistema de inventarios desarrollado en **AppSheet** para el departamento de mantenimiento, utilizando **Google Sheets** como base de datos central.
+Inventory management system developed in **AppSheet** for the maintenance department, using **Google Sheets** as the central database.
 
-La solución permite registrar productos, controlar entradas, salidas y préstamos, consultar el stock disponible y mantener trazabilidad sobre los movimientos realizados entre personal, unidades y departamentos.
+The solution allows users to register products, manage entries, exits, and loans, review available stock, and maintain traceability of movements between personnel, units, and departments.
 
-## Objetivo
+## Objective
 
-Digitalizar el control de inventario del departamento de mantenimiento mediante una solución en la nube que pueda ser utilizada tanto dentro de las instalaciones como durante trabajos en campo.
+Digitize the maintenance department's inventory management through a cloud-based solution that can be used both within the facilities and during field operations.
 
-El sistema busca centralizar:
+The system is designed to centralize:
 
-* Herramientas.
-* Consumibles.
-* Piezas y refacciones.
-* Entradas y salidas.
-* Préstamos.
-* Responsables de entrega y recepción.
-* Evidencias y firmas.
-* Historial de movimientos.
+* Tools.
+* Consumables.
+* Parts and spare parts.
+* Entries and exits.
+* Loans.
+* Delivery and receiving personnel.
+* Evidence and signatures.
+* Movement history.
 
-## Arquitectura general
+## General Architecture
 
-La solución utiliza principalmente:
+The solution mainly uses:
 
-* **AppSheet** — Interfaz de operación.
-* **Google Sheets** — Base de datos.
-* **AppSheet Automation** — Procesamiento automático de movimientos y generación de reportes.
-* **PDF** — Evidencia documental de altas y movimientos.
-* **Email** — Distribución automática de comprobantes y reportes.
+* **AppSheet** — Operational interface.
+* **Google Sheets** — Database.
+* **AppSheet Automation** — Automatic movement processing and report generation.
+* **PDF** — Documentary evidence for registrations and movements.
+* **Email** — Automatic distribution of receipts and reports.
 
-## Funcionalidades principales
+## Main Features
 
-### Productos
+### Products
 
-Permite consultar y registrar nuevos productos o activos.
+Allows users to review and register new products or assets.
 
-Cada registro puede incluir:
+Each record can include:
 
-* Nombre.
-* Descripción.
-* Imagen.
-* Número de serie.
-* Tipo de activo.
-* Firma de alta.
+* Name.
+* Description.
+* Image.
+* Serial number.
+* Asset type.
+* Registration signature.
 
-El sistema genera automáticamente la fecha de registro y un identificador único para cada producto.
+The system automatically generates the registration date and a unique identifier for each product.
 
-### Movimientos
+### Movements
 
-Permite registrar:
+Allows users to register:
 
-* Entradas.
-* Salidas.
-* Préstamos.
+* Entries.
+* Exits.
+* Loans.
 
-Cada movimiento puede involucrar uno o varios productos con cantidades independientes.
+Each movement can include one or multiple products with independent quantities.
 
-También se registran datos como:
+Additional information can also be recorded, such as:
 
-* Origen.
-* Destino.
-* Motivo.
-* Observaciones.
-* Responsables.
-* Evidencias.
-* Factura o ticket.
-* Firmas.
+* Origin.
+* Destination.
+* Reason.
+* Observations.
+* Responsible personnel.
+* Evidence.
+* Invoice or ticket.
+* Signatures.
 
-Cada operación recibe automáticamente un **ID de movimiento** y una fecha y hora de registro.
+Each transaction automatically receives a **Movement ID** and a registration date and time.
 
 ### Stock
 
-Vista de consulta que permite conocer los productos y cantidades asignadas a:
+Read-only view that allows users to review the products and quantities assigned to:
 
-* Personal.
-* Unidades.
-* Departamentos.
+* Personnel.
+* Units.
+* Departments.
 
-Desde esta vista no se realizan movimientos.
+No inventory movements can be performed from this view.
 
-## Automatizaciones
+## Automations
 
-El sistema cuenta con automatizaciones para:
+The system includes automations to:
 
-* Generar un movimiento al registrar un nuevo producto.
-* Actualizar automáticamente el inventario del origen y destino.
-* Crear registros individuales por producto dentro de cada movimiento.
-* Generar comprobantes en PDF.
-* Enviar notificaciones por correo electrónico.
-* Generar un reporte semanal consolidado de movimientos.
+* Generate a movement when a new product is registered.
+* Automatically update inventory between the origin and destination.
+* Create individual product records for each movement.
+* Generate PDF receipts.
+* Send email notifications.
+* Generate a consolidated weekly movement report.
 
-## Base de datos
+## Database
 
-La información se almacena en Google Sheets mediante las siguientes tablas principales:
+The information is stored in Google Sheets using the following main tables:
 
 ```text
 Items mantenimiento
@@ -106,9 +106,9 @@ Personal
 Unidades
 ```
 
-## Documentación
+## Documentation
 
-La documentación técnica del proyecto se encuentra en:
+The project's technical documentation is located in:
 
 ```text
 docs/
@@ -118,5 +118,4 @@ docs/
 └── automation/
 ```
 
-Dentro de estas carpetas se documentan la arquitectura, flujo de datos, estructura de la base de datos, funcionamiento de las vistas y automatizaciones implementadas.
-
+These folders document the system architecture, data flow, database structure, view functionality, and implemented automations.
